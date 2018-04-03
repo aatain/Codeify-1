@@ -2,11 +2,11 @@
   "name": "snackify",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "./server/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "build": "webpack && npm start",
+    "start": "node ./server/server.js",
+    "build": "webpack -w && npm start",
     "start:dev": "webpack-dev-server --hot"
   },
   "repository": {
@@ -38,6 +38,7 @@
     "pg-promise": "^8.2.2",
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
+    "react-router-dom": "^4.2.2",
     "style-loader": "^0.20.3",
     "webpack": "^4.4.1",
     "webpack-cli": "^2.0.13",

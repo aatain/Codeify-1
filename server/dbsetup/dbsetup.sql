@@ -1,3 +1,6 @@
+create table "users" ("username" varchar, "avatar" varchar, "vote_count" int, "submission_count" int)
+
+
 CREATE TABLE  IF NOT EXISTS "algorithms" (
 	"alg_id" SERIAL PRIMARY KEY,
 	"alg_question" VARCHAR
