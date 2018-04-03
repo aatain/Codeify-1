@@ -1,5 +1,3 @@
-
-
 const {Pool} = require('pg');
 
 //this is my password and user
@@ -15,20 +13,11 @@ let configA = {
 	ssl: true
 }
 
-
 let db = new Pool(configA);
 
 db.connect((err, result) => {
 	if (err) throw new Error(err);
 	else console.log("Connecting to DB...");
 })
-
-const algTable = `CREATE TABLE  IF NOT EXISTS "algorithms" (
-	"alg_id" SERIAL PRIMARY KEY,
-	"alg_question" VARCHAR
-)`;
-
-
-
 
 module.exports = db;
