@@ -1,5 +1,4 @@
 const path = require('path');
-
 module.exports = {
     //needed for webpack 4+
     mode:"development",

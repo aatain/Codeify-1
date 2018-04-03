@@ -1,0 +1,1 @@
+create table "users" ("username" varchar, "avatar" varchar, "vote_count" int, "submission_count" int)
