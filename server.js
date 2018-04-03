@@ -29,19 +29,32 @@ app.use(cookieParser());
 
 
 //this needs to change to our new DB info
-let user = 'ulurpczi';
-let pass = 'TVQxxaVGcvh2ZFlNZHXaHReKN_3DfZbm';
-let config = {
-	host: "nutty-custard-apple.db.elephantsql.com",
-	user: user,
-	password: pass,
-	database: user,
+const USERA = 'bfwodfds';
+const PASSA = 'i3jAAFygqniwDWxKnsysS93pOLFkW5EM';
+
+const USERP = 'nonezrkp';
+const PASSP = 'uSy4WratNKiX3R3KWQYorHkU6I6xQI7-';
+
+let configA = {
+	host: "baasu.db.elephantsql.com",
+	user: USERA,
+	password: PASSA,
+	database: USERA,
+	post: 5432,
+	ssl: true
+}
+
+let configP = {
+	host: "stampy.db.elephantsql.com",
+	user: USERP,
+	password: PASSP,
+	database: USERP,
 	post: 5432,
 	ssl: true
 }
 
 //Generating pool API
-let pool = new pg.Pool(config);
+let pool = new pg.Pool(configA);
 let db;
 
 pool.connect((err, result) => {
