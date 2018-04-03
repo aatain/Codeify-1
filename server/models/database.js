@@ -26,7 +26,7 @@ let configP = {
 }
 
 //Generating pool API
-let db = new Pool(configA);
+let db = new Pool(configP);
 
 db.connect((err, result) => {
 	if (err) throw new Error();
