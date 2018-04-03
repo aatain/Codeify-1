@@ -13,6 +13,7 @@ passportController.loginUser = (accessToken, refreshToken, profile, done) => {
     // FIXME
     db.query(`SELECT "username" from "users" where "username" = '${profile.username}';`, (err, result) => {
         if (err) throw err;
+        console.log('result.rows in passportC', result.rows)
         if (!result.rows[0]) {
             console.log('inside if statement in passportController');
             db.query(`INSERT into "users" ("username", avatar, vote_count, submission_count)

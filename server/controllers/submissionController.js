@@ -3,22 +3,15 @@ const db = require('../models/database');
 const submissionController = {};
 
 submissionController.submitCode = (req, res) => {
-	db.query(`SELECT submissionCount from snackify where "userName" = '${req.body.userName}';`, (err, count) => {
-		if (count.rows[0].submissioncount === 0) {
-			res.send('You Eat Too Much');
-		} else {
-			db.query(`UPDATE snackify SET submissionCount = submissionCount -1 WHERE "userName" = '${req.body.userName}';
-				  UPDATE snackify SET snackphoto = '${req.body.snackPhoto}' WHERE "userName" = '${req.body.userName}';
-				  UPDATE snackify SET comments = '${req.body.comments}' WHERE "userName" = '${req.body.userName}';`,
-				(err, result) => {
-					if (err) throw new Error(err);
-					res.send('successfully posted');
-				});
-		}
-	});
+    db.query(`INSERT INTO submissions (code, username, alg_id) VALUES ('${req.body.code}', '${req.body.username}', '${req.body.submitted_at}', '${req.body.alg_id}');`,
+        (err, result) => {
+            if (err) throw new Error(err);
+            res.send('successfully posted');
+        }
+    );
+};
 
-}
-
+//add method for displaying submissions
 submissionController.displayCodeGallery = (req, res) => {
 	// FIXME
 	db.query(`SELECT "userName" FROM snackify WHERE snackphoto IS NOT NULL;

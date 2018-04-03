@@ -41,5 +41,4 @@ class SubmissionForm extends Component {
 	}
 }
 
-// export default SubmissionForm;
-//so it doesnt conflict with our new SubmissionForm
+export default SubmissionForm;
